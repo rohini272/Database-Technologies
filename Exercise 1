@@ -1,0 +1,176 @@
+
+  EXERCISE 1    
+
+show databases;
+create database assignments;
+use assignments;
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+QUESTION 1
+
+create table SEMP ( empno char(4), empname char(20),
+basic float(9,2), deptno char(2), depthead char(4) );
+describe SEMP;
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+QUESTION 2
+
+create table SDEPT ( deptno char(2), deptname char(15) );
+describe SDEPT;
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+QUESTION 3
+
+insert into SDEPT values('10', 'Development');
+
+insert into SDEPT values('20', 'Training');
+select * from SDEPT;
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+QUESTION 4
+
+
+insert into SEMP (empno, empname, basic, deptno)
+values('0001','SUNIL',6000,10);
+
+insert into SEMP (empno, empname, basic, deptno)
+values('0002','HIREN',8000,20);
+
+insert into SEMP (empno, empname, basic, deptno, depthead)
+values('0003','ALI',4000,10,0001);
+
+insert into SEMP (empno, empname, basic, depthead)
+values('0004','GEORGE',6000,0002);
+select * from SEMP;
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+create table S 
+( S varchar(3) PRIMARY KEY, Sname varchar(10),
+Status1 int(3), city varchar(10) );
+
+create table P 
+( P varchar(3) PRIMARY KEY, Pname varchar(10),
+Color varchar(10), weight int(3), city varchar(10) );
+
+create table J
+( J varchar(3) PRIMARY KEY, city varchar(10) );
+
+create table SPJ
+( S varchar(3) NOT NULL, P varchar(3) NOT NULL, 
+J varchar(3) NOT NULL, qty int(4),
+FOREIGN KEY (S) REFERENCES S(S), 
+FOREIGN KEY (P) REFERENCES P(P),
+FOREIGN KEY (J) REFERENCES J(J) );
+
+----------------------------------------------------------------------------------------
+
+show tables;
+
+insert into S (S, Sname, Status1, city)
+values('S1', 'Eman', 10, 'Berlin');
+
+insert into S (S, Sname, Status1, city)
+values('S2', 'Pratik', 20, 'Pune');
+
+insert into S (S, Sname, Status1, city)
+values('S3', 'Vaibhav', 10, 'London');
+
+----------------------------------------------------------------------------------------
+
+insert into P (P, Pname,Color, weight, city)
+values('P1', 'Headlight', 'ElecBlue', 12.5, 'London');
+
+insert into P (P, Pname,Color, weight, city)
+values('P2', 'Tyre', 'Black', 1, 'Boston');
+
+insert into P (P, Pname,Color, weight, city)
+values('P3', 'Spoiler', 'Red', 3, 'Mumbai');
+
+----------------------------------------------------------------------------------------
+
+insert into J (J, Jname, city)
+values('J1', 'Project1', 'London');
+
+insert into J (J, Jname, city)
+values('J2', 'Project2', 'Delhi');
+
+insert into J (J, Jname, city)
+values('J3', 'Project3', 'Mumbai');
+
+----------------------------------------------------------------------------------------
+
+insert into SPJ (S, P, J, qty)
+values('S2', 'P1', 'J1', 5);
+
+insert into SPJ (S, P, J, qty)
+values('S3', 'P2', 'J3', 4);
+
+insert into SPJ (S, P, J, qty)
+values('S1', 'P3', 'J2', 7);
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+QUESTION 5
+
+select * from S;
+
+----------------------------------------------------------------------------------------
+QUESTION 6
+
+select S, sname from S;
+
+----------------------------------------------------------------------------------------
+QUESTION 7
+
+select Pname, color from P WHERE city='London';
+
+----------------------------------------------------------------------------------------
+QUESTION 8
+
+select Sname from S WHERE city='London';
+
+----------------------------------------------------------------------------------------
+QUESTION 9 
+
+select Sname from S WHERE city='Paris' OR city='Athens';
+
+----------------------------------------------------------------------------------------
+QUESTION 10
+
+select * from J WHERE city='Athens';
+
+----------------------------------------------------------------------------------------
+QUESTION 11
+
+select Pname, weight from P WHERE weight between 12 and 14;
+
+----------------------------------------------------------------------------------------
+QUESTION 12
+
+select * from S WHERE Status1 >= 20;
+
+----------------------------------------------------------------------------------------
+QUESTION 13
+
+select * from S WHERE city!='London';
+
+----------------------------------------------------------------------------------------
+QUESTION 14
+
+select Sname, city from S;
+
+----------------------------------------------------------------------------------------
+QUESTION 15
+
+select Pname, weight/1000 from P;
+
+select Pname, weight*1000 from P;
+----------------------------------------------------------------------------------------	
+
+
