@@ -1,0 +1,21 @@
+SQL ASSIGNMENT 8  
+QUESTION 1
+
+select onum as 'Order Number', snum as 'Sales Person Number', amt*0.12 as commission from orders;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 2
+
+select distinct cnum, cname, city, max(rating), snum from customers group by city;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 3
+
+select rating, cname, cnum from customers order by rating desc;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 4
+
+select count(onum),odate from orders group by odate order by odate desc;
+
+------------------------------------------------------------------------------------------------------
