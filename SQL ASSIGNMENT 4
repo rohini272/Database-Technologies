@@ -1,0 +1,30 @@
+SQL  ASSIGNMENT 4
+ 
+
+show databases;
+use assignments;
+
+QUESTION 1
+
+select onum, amt, odate from orders;
+
+-----------------------------------------------------------------------------------
+QUESTION 2
+
+select * from customers where snum = 1001;
+
+-----------------------------------------------------------------------------------
+QUESTION 3
+
+select city, sname, snum, comm from salespeople;
+
+-----------------------------------------------------------------------------------
+QUESTON 4
+
+select rating, cname from customers where city='San Jose';
+
+-----------------------------------------------------------------------------------
+QUESTION 5
+
+select distinct snum from orders;
+-----------------------------------------------------------------------------------
