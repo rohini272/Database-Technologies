@@ -1,0 +1,31 @@
+SQL ASSIGNMENT 6   
+
+QUESTION 1
+
+select * from orders where odate='1990-10-03' or odate='1990-10-04';
+
+select * from orders where odate in ('1990-10-03', '1990-10-04');
+
+--------------------------------------------------------------------------------------
+QUESTION 2
+
+
+select cname from customers where snum in (select snum from salespeople where sname in ('Peel', 'Motika'));
+
+--------------------------------------------------------------------------------------
+QUESTION 3
+
+select * from customers where cname between 'A%' and 'H%';
+SELECT *FROM customers WHERE substr(cname,1,1) BETWEEN 'A' AND 'G';
+
+--------------------------------------------------------------------------------------
+QUESTION 4
+
+select * from customers where cname > 'B%' and cname < 'D%';
+
+--------------------------------------------------------------------------------------
+QUESTION 5
+
+select * from orders where not (amt=0 or not amt);
+
+
