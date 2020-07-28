@@ -1,0 +1,32 @@
+SQL ASSIGNMENT 7       
+
+QUESTION 1
+
+select * from orders where odate='1990-10-03';
+
+------------------------------------------------------------------------------------------------------
+QUESTION 2
+
+select count(*) from customers where city is not NULL;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 3
+
+select min(amt) as 'smallest orders' ,cnum from orders group by cnum;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 4
+
+select * from customers where cname like 'G%' order by cname;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 5
+
+select distinct cnum, cname, city, max(rating) as 'Max Rating', snum from customers group by city;
+
+------------------------------------------------------------------------------------------------------
+QUESTION 6
+
+select count(distinct odate, snum),snum from orders group by snum;
+
+
